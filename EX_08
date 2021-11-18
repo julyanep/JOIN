@@ -1,0 +1,7 @@
+/*8) - Desenvolva o comando necessário para realizar a pesquisa do nome do autor e o nome das músicas dos autores que 
+seu nome comece com o caractere 'A'.*/
+
+	SELECT autor.nome_autor,
+			 musica.nome_musica
+		FROM autor LEFT JOIN musica ON (autor.codigo_autor = musica.codigo_musica)
+		WHERE musica.nome_musica LIKE 'A%';
