@@ -1,0 +1,8 @@
+/*12 - Desenvolva o comando necessário para pesquisar os seguintes dados, da tabela cd, o nome e o cd indicado, da tabela 
+CD Categoria, o menor preço e o maior preço. Pesquisa as informações do CD mesmo que não exista uma Categoria cadastrada
+ para o CD.*/ 
+	SELECT cd.nome_cd,
+			 cd.cd_indicado,
+			 cd_categoria.menor_preco,
+			 cd_categoria.maior_preco
+		FROM cd FULL JOIN cd_categoria ON (cd.codigo_cd = cd_categoria.codigo_cd);
