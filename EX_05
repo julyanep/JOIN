@@ -1,0 +1,9 @@
+/*5) - Desenvolva o comando necessário para realizar a pesquisa dos seguintes campos da tabela CD, o código e o nome e da tabela
+ CD_CATEGORIA e menor preço e o maior preço.*/
+ 
+ 	SELECT cd.codigo_cd,
+ 			 cd.nome_cd,
+ 			 cd_categoria.menor_preco,
+ 			 cd_categoria.maior_preco
+ 		FROM cd RIGHT JOIN cd_categoria ON (cd.codigo_cd = cd_categoria.codigo_categoria);
+	
