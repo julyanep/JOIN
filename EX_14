@@ -1,0 +1,6 @@
+/*14 - Desenvolva um comando SQL para realizar uma pesquisa com as seguintes características:
+ - Três campos.
+ - Join entre três tabelas.
+ - Três filtros.
+ - Ordene o resultado por um campo.*/
+ 
