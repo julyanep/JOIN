@@ -1,0 +1,16 @@
+/*9) - Desenvolva o comando necessário para pesquisar os seguintes dados, o nome do cd, preço de venda e a data de lançamento,
+ o número da faixa, o nome da música e a duração e o nome do autor dos cd's que tenham o código 2,4,6 e data de lançamento seja
+  maior que 01/01/1999 e preço de venda do cd esteja entre 10.00 e 17.00 reais.*/
+  
+  SELECT cd.nome_cd,
+  		   cd.preco_venda_cd,
+  		   cd.data_lancamento_cd,
+  		   faixa.numero_faixa,
+  		   musica.nome_musica,
+  		   musica.duracao_musica,
+  		   autor.nome_autor
+  		FROM cd INNER JOIN faixa ON (cd.codigo_cd = faixa.codigo_cd)
+  				  INNER JOIN musica ON (musica.codigo_musica = faixa.codigo_musica)
+  				  INNER JOIN autor ON (autor.codigo_autor = musica.codigo_musica)
+  				  WHERE cd.codigo_cd IN (2,4,6) AND cd.data_lancamento_cd > '1999-01-01' AND cd.preco_venda_cd BETWEEN 10.00 AND 17.00;
+  
