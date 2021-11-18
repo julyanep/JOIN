@@ -1,0 +1,11 @@
+*10) - Desenvolva o comando necessário para realizar a seguinte pesquisa, da tabela CD, o código e o nome, da tabela GRAVADORA,
+ o código e o nome de todas as gravadoras(mesmo que gravadora não tenha produzido cd) onde o endereço ou telefone ou contato ou a 
+ url esteja preenchido.*/
+ 	
+ 	SELECT cd.codigo_cd,
+ 			 cd.nome_cd,
+ 			 gravadora.codigo_gravadora,
+ 			 gravadora.nome_gravadora
+ 		FROM cd RIGHT JOIN gravadora ON (cd.codigo_cd = gravadora.codigo_gravadora)
+ 		WHERE cd.codigo_gravadora IS NULL 
+ 		AND gravadora.endereco_gravadora OR gravadora.telefone_gravadora OR gravadora.contato_gravadora OR gravadora.url_gravadora IS NOT NULL;
