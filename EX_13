@@ -1,0 +1,11 @@
+/*13 - Desenvolva o comando necessário para pesquisar os seguintes dados o nome da gravadora, o nome do cd, preço de venda
+ do cd, o menor preço e o maior preço da tabela Cd Categoria, mesmo que a Gravadora não possua Cd e o Cd não possua 
+ Categoria.*/
+
+	SELECT gravadora.nome_gravadora,
+			 cd.nome_cd,
+			 cd.preco_venda_cd,
+			 cd_categoria.menor_preco,
+			 cd_categoria.maior_preco
+		FROM gravadora LEFT JOIN cd ON (gravadora.codigo_gravadora = cd.codigo_cd)
+							INNER JOIN cd_categoria ON (cd_categoria.codigo_cd = cd.codigo_cd);
