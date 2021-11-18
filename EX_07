@@ -1,0 +1,14 @@
+/*7) - Desenvolva o comando necessário para realizar a pesquisa dos seguintes campos, da tabela CD código, nome e da tabela
+ FAIXA número da faixa e da tabela MUSICA nome e a duração da música dos cd's que possuem os códigos 1,3,5,7 e a data de 
+ lançamento esteja no intervalo entre 01/01/2000 a data atual.*/
+ 
+ 	SELECT cd.codigo_cd,
+ 			 cd.nome_cd,
+ 			 cd.data_lancamento_cd,
+ 			 faixa.numero_faixa,
+ 			 musica.nome_musica,
+ 			 musica.duracao_musica
+ 		FROM cd INNER JOIN faixa ON (cd.codigo_cd = faixa.codigo_cd)
+ 				  INNER JOIN musica ON (musica.codigo_musica = faixa.codigo_musica)
+ 				  WHERE cd.codigo_cd IN (1,3,5,7) AND cd.data_lancamento_cd BETWEEN '2000-01-01' AND '2021-11-18';
+ 	
