@@ -1,0 +1,7 @@
+/*11 - Desenvolva o comando necessário para realizar a pesquisa do nome do autor obrigatoriamente e o nome da musica 
+opcionalmente. Ordene a pesquisa pelo nome do autor e depois pelo nome da música.  */
+
+	SELECT autor.nome_autor,
+			 musica.nome_musica
+		FROM autor LEFT JOIN musica ON (autor.codigo_autor = musica.codigo_musica)
+		ORDER BY autor.nome_autor, musica.nome_musica;
