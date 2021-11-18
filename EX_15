@@ -1,0 +1,12 @@
+/*
+15) - Desenvolva o comando necessário para pesquisar todos os campos de todas as tabelas existentes 
+no banco de dados gravadora.*/
+
+	SELECT * FROM gravadora,
+					  autor,
+					  cd,
+					  cd_categoria,
+					  faixa,
+					  musica,
+					  musica_autor;
+	
