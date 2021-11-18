@@ -1,0 +1,20 @@
+/*1) - Desenvolva o comando necessário para pesquisar os seguintes dados, da tabela gravadora, pesquisar o código,
+ o nome e o endereço da tabela cd, pesquisar o código, o nome, o preço de venda e data de lançamento dos cd's que 
+ tenham o preço de venda entre R$ 9,00 e R$ 15,00 e data de lançamento entre 01/01/2001 e data atual, ordenado pelo 
+ nome da gravadora de forma ascendente.*/
+ 
+ SELECT * FROM gravadora INNER JOIN cd ON (gravadora.codigo_gravadora = cd.codigo_gravadora); /*Usando o INNER*/
+
+ SELECT * FROM gravadora, cd WHERE gravadora.codigo_gravadora = cd.codigo_gravadora; /*Outra forma de utilizar inner join */
+
+/*Selecionando campos especificos */ 
+ SELECT gravadora.codigo_gravadora,
+ 		  gravadora.nome_gravadora,
+		  gravadora.endereco_gravadora,
+		  cd.codigo_cd,
+		  cd.nome_cd,
+		  cd.preco_venda_cd,
+		  cd.data_lancamento_cd 
+ 	FROM gravadora INNER JOIN cd ON (gravadora.codigo_gravadora = cd.codigo_gravadora)
+ 	WHERE cd.preco_venda_cd BETWEEN 9.00 AND 15.00 AND cd.data_lancamento_cd BETWEEN '2001-01-01' AND '2021-11-11'
+ 	ORDER by gravadora.nome_gravadora ASC;
