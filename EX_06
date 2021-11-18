@@ -1,0 +1,17 @@
+/*6) - Desenvolva o comando necessário para realizar uma pesquisa, e obtenha os seguintes dados da tabela GRAVADORA: código,
+ nome, e da tabela CD: código, nome e data de lançamento e da tabela CD_CATEGORIA o menor preço e o maior preço onde a data de
+  lançamento do cd esteja entre 01/01/1995 a 10/05/1999 e o preço de venda seja maior que 10.00 reais.*/
+  
+  	SELECT gravadora.codigo_gravadora,
+  			 gravadora.nome_gravadora,
+  			 cd.codigo_cd,
+  			 cd.nome_cd,
+  			 cd.data_lancamento_cd,
+  			 cd_categoria.menor_preco,
+  			 cd_categoria.maior_preco
+  		FROM gravadora 
+		  	INNER JOIN cd ON(gravadora.codigo_gravadora = cd.codigo_gravadora)
+		  	INNER JOIN cd_categoria ON(cd_categoria.codigo_cd = cd.codigo_cd)
+		  	WHERE cd.data_lancamento_cd BETWEEN '1995-01-01' AND '1999-05-10'
+		  	AND cd.preco_venda_cd > 10.00;
+	
