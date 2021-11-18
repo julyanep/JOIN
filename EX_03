@@ -1,0 +1,7 @@
+/*3) - Desenvolva o comando necessário para pesquisar o nome do autor e o nome da música produzida por ele, ordenado pelo 
+nome do autor de forma descendente.*/
+
+	SELECT * FROM autor 
+						INNER JOIN musica_autor ON (autor.codigo_autor = musica_autor.codigo_autor)
+						INNER JOIN musica ON (musica.codigo_musica = musica_autor.codigo_musica)
+						ORDER by autor.nome_autor DESC;
