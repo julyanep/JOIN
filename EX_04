@@ -1,0 +1,13 @@
+/*4) - Desenvolva o comando necessário para realizar o pesquisa dos seguintes dados: código da gravadora, nome da gravadora, 
+código do cd, nome do cd e preço de venda do cd, das gravadoras que tenham o endereço e contato cadastrados e o preço de venda
+ do cd esteja entre 10.00 e 15.00 reais.*/
+ 
+ 	SELECT gravadora.codigo_gravadora,
+ 			 gravadora.nome_gravadora,
+ 			 cd.codigo_cd,
+ 			 cd.nome_cd,
+ 			 cd.preco_venda_cd
+	 FROM gravadora INNER JOIN cd ON (gravadora.codigo_gravadora = cd.codigo_gravadora)
+	 WHERE gravadora.contato_gravadora IS NOT NULL
+	 AND gravadora.endereco_gravadora IS NOT NULL
+	 AND cd.preco_venda_cd BETWEEN 10.00 and 15.00;
