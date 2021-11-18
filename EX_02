@@ -1,0 +1,6 @@
+/*2) - Desenvolva o comando necessário para pesquisar todos os dados das tabelas cd e cd_categoria onde o cd indicado seja
+ 1 ou 2 ou 3 e o menor preço da tabela cd_categoria seja maior que R$ 5.00 e maior preço da tabela cd_categoria seja menor
+  que R$ 15,00.*/
+  
+  SELECT * FROM cd INNER JOIN cd_categoria ON (cd.codigo_cd = cd_categoria.codigo_cd)
+  	WHERE cd.cd_indicado IN (1, 2, 3) and cd_categoria.menor_preco >5.00 and cd_categoria.maior_preco < 15.00;
